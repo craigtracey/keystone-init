@@ -1,2 +1,0 @@
-PyYAML
--e git://github.com/openstack/python-keystoneclient.git#egg=keystoneclient
