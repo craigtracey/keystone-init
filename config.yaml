@@ -69,7 +69,7 @@ services and endpoints:
       adminurl:     http://192.168.206.130:8773/services/Admin
 
     - name:         swift
-      type:         objectstore
+      type:         object-store
       description:  Object Storage Service
       region:       RegionOne
       publicurl:    http://127.0.0.1:8080/v1/AUTH_%(tenant_id)s
