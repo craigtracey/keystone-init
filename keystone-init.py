@@ -1,4 +1,14 @@
 #!/usr/bin/env python
+# Copyright 2012 Nimbis Services, Inc.
+"""
+
+Script for initializing OpenStack Identity service (keystone).
+
+Usage: keystone-init.py config.yaml
+
+Edit the provided config.yaml file for your setup.
+
+"""
 import sys
 import yaml
 
@@ -81,7 +91,7 @@ def create_services_and_endpoints(keystone, config):
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print "Usage: keystone-init.py config-file"
+        print "Usage: keystone-init.py config-file.yaml"
         sys.exit(-1)
     config = parse_config(sys.argv[1])
     configure_keystone(config)
