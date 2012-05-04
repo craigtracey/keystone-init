@@ -1,6 +1,6 @@
 # keystone-init
 
-Configuring the OpenStack Identity service (keystone), as documented in the
+Configuring the OpenStack Identity Service (keystone), as documented in the
 [OpenStack Install and Deploy manual](http://docs.openstack.org/trunk/openstack-compute/install/content/install-keystone.html), is tedious and
 error-prone. *keystone-init* automates the commands as written in the
 documentation.
