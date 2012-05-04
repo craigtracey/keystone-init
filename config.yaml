@@ -23,11 +23,8 @@ service users:
     - name:     ec2
       password: ec2
 
-    - name:     ec2
-      password: ec2
-
     - name:     swfit
-    - password: swiftpass
+      password: swiftpass
 
 # See: http://docs.openstack.org/essex/openstack-compute/install/content/keystone-service-endpoint-create.html
 services and endpoints:
@@ -75,6 +72,6 @@ services and endpoints:
       type:         objectstore
       description:  Object Storage Service
       region:       RegionOne
-      publicurl:    http://192.168.206.130:8773/services/Cloud
-      internalurl:  http://192.168.206.130:8773/services/Cloud
-      adminurl:     http://192.168.206.130:8773/services/Admin
+      publicurl:    http://127.0.0.1:8080/v1/AUTH_%(tenant_id)s
+      internalurl:  http://127.0.0.1:8080/
+      adminurl:     http://127.0.0.1:8080/v1/AUTH_%(tenant_id)s

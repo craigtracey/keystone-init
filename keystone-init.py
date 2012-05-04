@@ -25,19 +25,18 @@ def configure_keystone(config):
 
 
 def create_default_tenant(keystone, config):
-    """Create the default tenant"""
-    tenant_dict = config['default_tenant']
+    """Create the default tenant and return it"""
+    tenant_dict = config['default tenant']
     name = tenant_dict['name']
     desc = tenant_dict['description']
-    tenant = keystone.tenants.create(tenant_name=name, description=desc,
-                                     enabled=True)
-    return tenant
+    return keystone.tenants.create(tenant_name=name, description=desc,
+                                   enabled=True)
 
 
 def create_default_user(keystone, config, tenant):
-    """Create the default (admin) user"""
+    """Create the default (admin) user and return it"""
     name = config['default user']['name']
-    password = config['default user']['pass']
+    password = config['default user']['password']
     user = keystone.users.create(name=name, password=password, email="None",
                                  tenant_id=tenant.id)
     return user
@@ -57,8 +56,8 @@ def create_default_roles(keystone, config, tenant, user):
 
 
 def create_service_tenant(keystone, config):
-    """Create the service tenant"""
-    keystone.tenants.create(tenant_name="service",
+    """Create the service tenant and return it"""
+    return keystone.tenants.create(tenant_name="service",
                             description="Service Tenant", enabled=True)
 
 
